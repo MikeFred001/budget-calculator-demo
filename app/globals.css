@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+  }
+}
+
+body {
+  color: rgb(150, 255, 150);
+  font-size: 20px;
+  background: var(--background);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.BiWeekly-outline {
+  @apply border-blue-400 text-blue-400;
+}
+
+.Monthly-outline {
+  @apply border-green-400 text-green-400;
+}
+
+.Yearly-outline {
+  @apply border-red-400 text-red-400;
+}
+
+.BiWeekly-filled {
+  @apply border-blue-400 bg-blue-400 text-black;
+}
+
+.Monthly-filled {
+  @apply border-green-400 bg-green-400 text-black;
+}
+
+.Yearly-filled {
+  @apply border-red-400 bg-red-400 text-black;
+}
+
+.BiWeekly-hover {
+  @apply md:hover:bg-blue-500 md:hover:text-black;
+}
+
+.Monthly-hover {
+  @apply md:hover:bg-green-500 md:hover:text-black;
+}
+
+.Yearly-hover {
+  @apply md:hover:bg-red-500 md:hover:text-black;
+}
+
+.Default-hover {
+  @apply md:hover:bg-green-500 md:hover:text-black;
+}
+
+.Default-outline {
+  @apply border-green-300 text-green-300;
+}
+
+.Default-filled {
+  @apply border-green-300 bg-green-300 text-black;
+}
