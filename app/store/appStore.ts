@@ -39,9 +39,9 @@ const exampleBudgetItems = [
   },
   {
     id: 6,
-    name: "Utilities",
-    cost: 150.0,
-    freq: "Monthly",
+    name: "spotify",
+    cost: 10.99,
+    freq: "BiWeekly",
     startDate: "2025-01-31T12:00:00Z",
   },
 ];
