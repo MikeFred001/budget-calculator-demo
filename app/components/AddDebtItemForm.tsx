@@ -55,7 +55,7 @@ export default function AddDebtItemForm() {
     </form>
   );
 
-  async function addDebtItem(newItem: IFormData) {
+  function addDebtItem(newItem: IFormData) {
     const entries = Object.values(newItem);
     for (const entry of entries) {
       if (entry === "") {
@@ -75,9 +75,9 @@ export default function AddDebtItemForm() {
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await addDebtItem(formData);
+    addDebtItem(formData);
     setFormData(initialFormData);
     if (inputRef.current) inputRef.current.focus();
   }

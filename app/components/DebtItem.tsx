@@ -14,7 +14,7 @@ export default function DebtItem({ item, className }: IDebtItemProps) {
   return !editingDebtItem ? (
     <div
       className={`
-      DEBT-ITEM flex items-center justify-between p-2 border Default-outline text-[1.1rem] md:text-[1.4rem] ${className}
+      DEBT-ITEM flex items-center justify-between p-2 border Default-outline text-[1.2rem] md:text-[1.4rem] ${className}
     `}
     >
       {/* Desktop */}
@@ -30,7 +30,7 @@ export default function DebtItem({ item, className }: IDebtItemProps) {
         <Typography className="leading-none">
           {capitalize(item.name)}
         </Typography>
-        <Typography currency className="opacity-80 text-[1rem] leading-none">
+        <Typography currency className="opacity-80 text-[.9rem] leading-none">
           {item.amount}
         </Typography>
       </div>

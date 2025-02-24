@@ -61,7 +61,7 @@ export default function EditDebtItemForm({
     </form>
   );
 
-  async function editDebtItem(formData: IFormData) {
+  function editDebtItem(formData: IFormData) {
     const entries = Object.values(formData);
     for (const entry of entries) {
       if (entry === "") {
@@ -77,7 +77,7 @@ export default function EditDebtItemForm({
       };
 
       const newDebtItems = debtItems.map((dItem) =>
-        dItem.id === updatedDebtItem.id ? updatedDebtItem : item
+        dItem.id === updatedDebtItem.id ? updatedDebtItem : dItem
       );
       setAppState({ debtItems: newDebtItems });
     } catch (err) {
@@ -85,9 +85,9 @@ export default function EditDebtItemForm({
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await editDebtItem(formData);
+    editDebtItem(formData);
     setFormData(initialFormData);
     setEditingDebtItem(false);
   }

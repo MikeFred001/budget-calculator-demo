@@ -2007,7 +2007,7 @@ function AddDebtItemForm() {
         columnNumber: 5
     }, this);
     "TURBOPACK unreachable";
-    async function addDebtItem(newItem) {
+    function addDebtItem(newItem) {
         const entries = Object.values(newItem);
         for (const entry of entries){
             if (entry === "") {
@@ -2031,9 +2031,9 @@ function AddDebtItemForm() {
             console.error("Failed to add debt item:", err);
         }
     }
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        await addDebtItem(formData);
+        addDebtItem(formData);
         setFormData(initialFormData);
         if (inputRef.current) inputRef.current.focus();
     }
@@ -2176,7 +2176,7 @@ function EditDebtItemForm({ item, setEditingDebtItem }) {
         columnNumber: 5
     }, this);
     "TURBOPACK unreachable";
-    async function editDebtItem(formData) {
+    function editDebtItem(formData) {
         const entries = Object.values(formData);
         for (const entry of entries){
             if (entry === "") {
@@ -2190,7 +2190,7 @@ function EditDebtItemForm({ item, setEditingDebtItem }) {
                 name: formData.name,
                 amount: Number(formData.amount)
             };
-            const newDebtItems = debtItems.map((dItem)=>dItem.id === updatedDebtItem.id ? updatedDebtItem : item);
+            const newDebtItems = debtItems.map((dItem)=>dItem.id === updatedDebtItem.id ? updatedDebtItem : dItem);
             setAppState({
                 debtItems: newDebtItems
             });
@@ -2198,9 +2198,9 @@ function EditDebtItemForm({ item, setEditingDebtItem }) {
             console.error("Failed to edit debt item:", err);
         }
     }
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        await editDebtItem(formData);
+        editDebtItem(formData);
         setFormData(initialFormData);
         setEditingDebtItem(false);
     }
@@ -2266,7 +2266,7 @@ function DebtItem({ item, className }) {
     const { debtItems, setAppState } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$store$2f$appStore$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
     return !editingDebtItem ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `
-      DEBT-ITEM flex items-center justify-between p-2 border Default-outline text-[1.1rem] md:text-[1.4rem] ${className}
+      DEBT-ITEM flex items-center justify-between p-2 border Default-outline text-[1.2rem] md:text-[1.4rem] ${className}
     `,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2307,7 +2307,7 @@ function DebtItem({ item, className }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$common$2f$Typography$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         currency: true,
-                        className: "opacity-80 text-[1rem] leading-none",
+                        className: "opacity-80 text-[.9rem] leading-none",
                         children: item.amount
                     }, void 0, false, {
                         fileName: "[project]/app/components/DebtItem.tsx",
