@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import BrandMonogram from "./components/BrandMonogram";
 import Breakdown from "./components/Breakdown";
 import BudgetItemPanel from "./components/BudgetItemPanel";
 import type { Preferences } from "./components/BudgetItemPanel";
@@ -43,9 +44,7 @@ export default function Home() {
       <header className="dashboard-header">
         <div className="brand">
           <span className="brand-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
+            <BrandMonogram size={30} color="currentColor" />
           </span>
           <div>
             <h1>Neon Finance</h1>
